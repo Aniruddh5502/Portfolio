@@ -314,8 +314,8 @@
             <div class="reliability-statement">
                 A surrogate ensemble framework that replaces computationally expensive FEA simulations
                 with high-fidelity surrogate models for mechanical designing — enabling real-time design
-                exploration and Pareto optimisation.This project targets parts specific parametric design
-                space interpolation, not for general purpose physics replacement. But for part specific optimizations.
+                exploration and Pareto optimisation. This project targets part-specific parametric design
+                space interpolation, not a general-purpose physics replacement, but for part-specific optimizations.
             </div>
             <div class="project-meta">
                 <span><span class="tag">Stack:</span> Python · PyTorch · Scikit-Learn · Ansys Workbench</span>
@@ -330,7 +330,7 @@
 
             <p>
                 Optimising the geometry of a capacitive flexure accelerometer requires sweeping four
-                tightly coupled parameters across a large design space. Each ANSYS FEA evaluation takes
+                tightly coupled parameters across a large design space. Each Ansys FEA evaluation takes
                 several minutes; a full sweep is intractable inside an iterative optimisation loop.
                 A surrogate model solves this — trained once on automated FEA data, it returns predictions
                 in milliseconds with near-equivalent accuracy.
@@ -382,7 +382,7 @@
                     <span
                         style="font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);display:block;margin-bottom:6px;">01</span>
                     <div style="font-size:0.88rem;font-weight:500;margin-bottom:4px;">Dataset generation</div>
-                    <div style="font-size:0.8rem;color:var(--muted);font-weight:300;">Scripted parameter sweep via ANSYS
+                    <div style="font-size:0.8rem;color:var(--muted);font-weight:300;">Scripted parameter sweep via Ansys(Grid for 4 Input Param)
                     </div>
                 </div>
                 <div style="padding:16px 18px;background:#fff;border:1px solid var(--border);border-right:none;">
@@ -403,7 +403,7 @@
                     <span
                         style="font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);display:block;margin-bottom:6px;">04</span>
                     <div style="font-size:0.88rem;font-weight:500;margin-bottom:4px;">FEA revalidation</div>
-                    <div style="font-size:0.8rem;color:var(--muted);font-weight:300;">Confirm selected point in ANSYS
+                    <div style="font-size:0.8rem;color:var(--muted);font-weight:300;">Confirm selected point in Ansys
                     </div>
                 </div>
             </div>
@@ -412,7 +412,7 @@
             <div class="impact-row">
                 <div class="impact-card">
                     <div class="metric">1200+</div>
-                    <div class="label">Automated ANSYS simulations via scripted parameter sweep</div>
+                    <div class="label">Grid sampling for equal density coverage of the total design area</div>
                 </div>
                 <div class="impact-card">
                     <div class="metric">&lt;5%</div>
@@ -541,11 +541,11 @@
                 is examined. Strong pairwise correlations (both positive and negative) confirm that the
                 outputs share latent physical dependencies — they cannot be modelled independently.
 
-                In deeper look, it reveals that the modal frequencies are correlated in positive ways with
-                each others. And inversely with the max deformation and max stree measurements, as representing
-                the underlying physics stating if a model is structurally strong then its sress levels would
-                be smaller and in force application it will deform less, and inversely its natural frequencies
-                of different modes will go higher which is identical to the underlying physics.
+                In deeper look, it reveals that the modal frequencies are correlated positively with
+                each other, and inversely with the max deformation and max stress measurements. This reflects
+                the underlying physics: a structurally stiffer model exhibits higher natural frequencies
+                across different modes, while simultaneously exhibiting lower stress and deformation
+                under the same load.
             </p>
             <div class="diagram-container" style="max-width:540px;margin:30px auto;">
                 <img src="surrogate-model/pca/output_correlation_heatmap.svg" class="img-fluid"
@@ -642,9 +642,9 @@
             <div class="callout">
                 <p>
                     A single deterministic MLP gives no signal when it is wrong.
-                    The ensemble's σ provides a <strong>trust radius</strong>: designs with low σ
-                    can be accepted directly; high-σ designs are flagged for FEA re-evaluation.
-                    This makes the surrogate safe to use in automated optimisation loops.
+                    The ensemble's $\sigma$ provides a measure of predictive uncertainty: designs with 
+                    high variance indicate regions where the model is less confident, signaling that 
+                    FEA verification is critical before committing to a design.
                 </p>
             </div>
         </div>
@@ -677,7 +677,7 @@
         <!-- ══ 7. MANIFOLD ══ -->
         <div class="content-section reveal">
             <span class="section-num">07 — Response Manifold</span>
-            <h2>2D Manifold Coloured by Input Parameters</h2>
+            <h2>2D Manifold Colored by Input Parameters</h2>
             <p>
                 The 6D output space is projected to 2D via PCA (98.98% variance retained).
                 Each of the four input parameters is used as the colour axis to reveal which
@@ -894,7 +894,7 @@
                 Running <code>optimize.py</code> exercises the full surrogate pipeline. Objective constraints
                 defined in the <code>OBJECTIVE</code> block drive a multi-objective search; results are written
                 to <code>plots/pareto/</code> as both a Pareto front plot and a companion CSV. A design point is
-                selected visually from the plot, confirmed in the CSV, and then verified against a fresh ANSYS
+                selected visually from the plot, confirmed in the CSV, and then verified against a fresh Ansys
                 simulation.
             </p>
 
@@ -908,8 +908,12 @@
             <p>
                 From the front, a candidate region was identified where the second modal frequency approaches
                 1000 Hz and the first stays near 100 Hz — a target separation ratio of roughly 10×. The
-                corresponding entry in the Pareto CSV yields the selected design point below. Considering this
-                is at the boundary of the design space so a bit of more error is expected.
+                corresponding entry in the Pareto CSV yields the selected design point below. Now we use the framework to do the optimization
+                calculations and after we select the prefered area from the design 
+                prediction curves, Ansys verification is done to see if that is
+                correct or close enough to make any Engineering Desicion from it.
+                Here we quantify the error percentage in the predictions and Ansys
+                calculated results side by side for reference run we did for the specific part.
             </p>
 
             <h2 style="font-size:0.75rem;margin-bottom:16px;">Selected design point</h2>
@@ -959,13 +963,13 @@
                 style="background:#fff;border:1px solid var(--border);border-left:3px solid var(--accent);padding:24px 28px;max-width:640px;">
                 <p
                     style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:16px;">
-                    ANSYS Verification</p>
+                    Ansys Verification</p>
                 <table class="perf-table" style="margin:0;">
                     <thead>
                         <tr>
                             <th>Metric</th>
                             <th>Surrogate</th>
-                            <th>ANSYS</th>
+                            <th>Ansys</th>
                         </tr>
                     </thead>
                     <tbody>
