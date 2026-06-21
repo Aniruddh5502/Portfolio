@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniruddho Biswas Badhon</title>
-    <!-- Added Playfair Display italic for the calligraphic feel -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,600&family=Inter:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,25 +14,20 @@
 <body>
     <div class="container">
         <header class="reveal">
-            <!-- Applying calligraphic span to "Biswas Badhon" -->
             <h1 class="serif-display">Aniruddho <br><span class="calligraphic">Biswas Badhon</span></h1>
             <div class="tagline">
                 <ul>
-                    <li>I build ML surrogate models that replace ANSYS simulation loops — A 20-model ensemble trained on
-                        ~1200+ FEM
-                        runs that predicts structural outputs in milliseconds where each simulation took minutes.</li>
+                    <li>I build ML surrogate models that replace ANSYS simulation loops — a 20-model ensemble trained on
+                        1,296 FEM runs that predicts structural outputs in milliseconds where each simulation took
+                        minutes.</li>
                     <li>I script parametric batch simulations in Ansys — automating hundreds of geometry-varied FEM
-                        configurations
-                        that would otherwise require manual GUI interaction for every single run.</li>
+                        configurations that would otherwise require manual GUI interaction for every single run.</li>
                     <li>I build agentic AI systems on local hardware — autonomous agent loops with persistent memory,
-                        tool use, and
-                        context compaction, running fully on-device via Ollama.</li>
+                        tool use, and context compaction, running fully on-device via Ollama.</li>
                     <li>I take embedded hardware from design to firmware — STM32 and ESP32, FreeRTOS task scheduling,
-                        fault-tolerant
-                        TMR systems with OTA update pipelines.</li>
+                        fault-tolerant TMR systems with OTA update pipelines.</li>
                     <li>I design and manufacture functional parts on a Creality CR10 — ran a product-based business from
-                        BUET,
-                        handling design, production, and sales end-to-end.</li>
+                        BUET, handling design, production, and sales end-to-end.</li>
                 </ul>
             </div>
         </header>
@@ -45,7 +39,7 @@
                     <ul class="project-list">
                         <li class="serif-display">
                             <a href="momobot.html">Momobot — Autonomous Agent Harness</a>
-                            <br><span style="color:var(--muted);font-size:0.9rem">
+                            <span class="project-desc">
                                 LangGraph-based autonomous agent running locally via Ollama on a 4GB Celeron system.
                                 Implements persistent flat-file semantic memory with CRUD tooling, token-aware context
                                 compaction at 100k threshold, subagent delegation with structured exit signaling, and
@@ -55,17 +49,17 @@
                         </li>
                         <li class="serif-display">
                             <a href="surrogate-model.html">Design Space Exploration and Optimization Framework</a>
-                            <br><span style="color:var(--muted);font-size:0.9rem">
+                            <span class="project-desc">
                                 20-model ensemble neural network surrogate trained on 1,296 ANSYS FEM simulations
-                                (6⁴ full-factorial DoE) for a MEMS accelerometer. Replaces per-query FEM runtime with
-                                millisecond inference across 4 geometric inputs and 10 structural outputs. Includes
-                                Jacobian sensitivity analysis via autograd, UMAP weight-space diversity validation,
-                                and Pareto-front multi-objective optimization.
+                                (6&#8308; full-factorial DoE) for a MEMS accelerometer. Replaces per-query FEM runtime
+                                with millisecond inference across 4 geometric inputs and 10 structural outputs. Includes
+                                Jacobian sensitivity analysis via autograd, UMAP weight-space diversity validation, and
+                                Pareto-front multi-objective optimization.
                             </span>
                         </li>
                         <li class="serif-display">
                             <a href="fault-tolerant.html">Fault Tolerant System Design</a>
-                            <br><span style="color:var(--muted);font-size:0.9rem">
+                            <span class="project-desc">
                                 TMR (Triple Modular Redundancy) firmware for an aerospace embedded system. Triple OTA
                                 partition layout with SHA256 verification, self-repair engine, round-robin failover,
                                 hardware watchdog, 2-layer 9-copy variable TMR class, and process TMR with volatile
@@ -78,10 +72,13 @@
                 <section class="reveal">
                     <h2 class="serif-display">Education</h2>
                     <ul class="meta-list">
-                        <li>Bangladesh University of Engineering & Technology (BUET)<br><span
-                                style="color:var(--muted);font-size:0.9rem">B.Sc. Mechanical Engineering —
-                                2020-2026(Graduated in June)</span></li>
-                        <li>Notre Dame College<br><span style="color:var(--muted);font-size:0.9rem">HSC-2020</span></li>
+                        <li>Bangladesh University of Engineering &amp; Technology (BUET)<br>
+                            <span style="color:var(--muted);font-size:0.9rem">B.Sc. Mechanical Engineering —
+                                2020–2026 (Graduated June 2026)</span>
+                        </li>
+                        <li>Notre Dame College<br>
+                            <span style="color:var(--muted);font-size:0.9rem">HSC — 2020</span>
+                        </li>
                     </ul>
                 </section>
             </div>
@@ -90,10 +87,10 @@
                 <section class="reveal">
                     <h2 class="serif-display">Technical <span class="calligraphic">Proficiency</span></h2>
                     <ul class="meta-list">
-                        <li><a href="solidworks.html">SolidWorks</a> — CAD, product design & manufacturing</li>
+                        <li><a href="solidworks.html">SolidWorks</a> — CAD, product design &amp; manufacturing</li>
                         <li><a href="ansys.html">Ansys</a> — scripting, batch simulations, FEA-based ML model building
                         </li>
-                        <li><a href="matlab.html">Matlab</a> — Data processing, Machine Learning</li>
+                        <li><a href="matlab.html">Matlab</a> — data processing, machine learning</li>
                         <li>Blender — product visualization, photorealistic rendering (Cycles)</li>
                         <li>Embedded Systems — ESP32, STM32, FreeRTOS</li>
                         <li>Python, PyTorch — ML model building, surrogate pipelines, data pipelines</li>
@@ -112,7 +109,7 @@
                 </section>
 
                 <section class="reveal">
-                    <h2 class="serif-display">Connect <span class="calligraphic">Now</span></h2>
+                    <h2 class="serif-display">Connect</h2>
                     <ul class="meta-list contact-info">
                         <li><a href="mailto:aniruddh5502@gmail.com">Email</a></li>
                         <li><a href="https://github.com/Aniruddh5502" target="_blank" rel="noopener">GitHub</a></li>
