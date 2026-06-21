@@ -6,7 +6,7 @@
     --muted: #7a7a7a;
     --border: #e5ddd3;
     --radius: 4px;
-    --serif: 'Newsreader', serif;
+    --serif: 'Playfair Display', serif;
     --sans: 'Inter', sans-serif;
     --mono: 'JetBrains Mono', monospace;
     --transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -31,7 +31,7 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 80px 40px;
 }
@@ -89,7 +89,7 @@ h1 {
     font-weight: 400;
     color: var(--fg);
     margin-top: 24px;
-    max-width: 640px;
+    max-width: 1500px;
     line-height: 1.5;
     border-left: 3px solid var(--accent);
     padding-left: 16px;
