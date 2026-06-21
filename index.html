@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniruddho Biswas Badhon — Portfolio</title>
+    <title>Aniruddho Biswas Badhon</title>
     <!-- Added Playfair Display italic for the calligraphic feel -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,600&family=Inter:wght@300;400;600&display=swap"
@@ -43,10 +43,35 @@
                 <section class="reveal">
                     <h2 class="serif-display">Selected <span class="calligraphic">Works</span></h2>
                     <ul class="project-list">
-                        <li class="serif-display"><a href="momobot.html">Momobot: Autonomous Agent Harness</a></li>
-                        <li class="serif-display"><a href="surrogate-model.html">Design Space Exploration and
-                                Optimization Framework</a></li>
-                        <li class="serif-display"><a href="fault-tolerant.html">Fault Tolerant System Design</a></li>
+                        <li class="serif-display">
+                            <a href="momobot.html">Momobot — Autonomous Agent Harness</a>
+                            <br><span style="color:var(--muted);font-size:0.9rem">
+                                LangGraph-based autonomous agent running locally via Ollama on a 4GB Celeron system.
+                                Implements persistent flat-file semantic memory with CRUD tooling, token-aware context
+                                compaction at 100k threshold, subagent delegation with structured exit signaling, and
+                                exponential backoff retry logic for inference failures. 31B parameter model, no cloud
+                                dependency.
+                            </span>
+                        </li>
+                        <li class="serif-display">
+                            <a href="surrogate-model.html">Design Space Exploration and Optimization Framework</a>
+                            <br><span style="color:var(--muted);font-size:0.9rem">
+                                20-model ensemble neural network surrogate trained on 1,296 ANSYS FEM simulations
+                                (6⁴ full-factorial DoE) for a MEMS accelerometer. Replaces per-query FEM runtime with
+                                millisecond inference across 4 geometric inputs and 10 structural outputs. Includes
+                                Jacobian sensitivity analysis via autograd, UMAP weight-space diversity validation,
+                                and Pareto-front multi-objective optimization.
+                            </span>
+                        </li>
+                        <li class="serif-display">
+                            <a href="fault-tolerant.html">Fault Tolerant System Design</a>
+                            <br><span style="color:var(--muted);font-size:0.9rem">
+                                TMR (Triple Modular Redundancy) firmware for an aerospace embedded system. Triple OTA
+                                partition layout with SHA256 verification, self-repair engine, round-robin failover,
+                                hardware watchdog, 2-layer 9-copy variable TMR class, and process TMR with volatile
+                                compiler barriers. Validated via a fault injection test harness.
+                            </span>
+                        </li>
                     </ul>
                 </section>
 
