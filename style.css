@@ -6,7 +6,7 @@
     --border: #e5ddd3;
     --radius: 4px;
     --serif: 'Playfair Display', serif;   /* was 'Newsreader' — not loaded, caused silent fallback to Times New Roman */
-    --sans: 'Inter', sans-serif;
+    --sans: sans-serif;
     --mono: 'JetBrains Mono', monospace;
     --transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
